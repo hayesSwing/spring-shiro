@@ -1,0 +1,12 @@
+# IDENTITY
+spring:
+  application:
+    name: spring-shiro
+    
+# ServerProperties
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    
+    
