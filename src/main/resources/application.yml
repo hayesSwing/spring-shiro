@@ -1,12 +1,22 @@
-# IDENTITY
 spring:
   application:
     name: spring-shiro
-    
+#
+debug: true
+
 # ServerProperties
 server:
   port: 8080
   servlet:
     context-path: /
     
-    
+# LOGGING
+logging:
+  file: ./log/web.log
+  #path: ./log
+
+# FreeMarker 
+
+# Shiro
+
+
