@@ -1,6 +1,3 @@
-spring:
-  application:
-    name: spring-shiro
 #
 debug: true
 
@@ -14,10 +11,25 @@ server:
 logging:
   file: ./log/web.log
   #path: ./log
-
-# FreeMarker 
-
+  
+spring:
+  application:
+    name: spring-shiro
+  # FreeMarker 
+  freemarker:
+    settings:
+       template_exception_handler: com.xiangzi.freemarker.DefaultTemplateExceptionHandler
+       auto_import: spring.ftl as spring
+       
 # Shiro
-shiro:
-  loginUrl: 
+  
+# Redis
+redis:
+  type: single
+  host: 127.0.0.1
+  port:  6379
+  password: 123456
+  database: 1
+  timeout: 120000
+  
   
