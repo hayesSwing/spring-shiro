@@ -1,6 +1,9 @@
 package com.xiangzi.config;
 
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,13 +22,16 @@ public class EventBusConfig {
 	 */
 	@Bean(name = "myEventBus")
 	public EventBus eventBus() {
-		return new AsyncEventBus(Executors.newFixedThreadPool(10));
+
+		return new AsyncEventBus(new ThreadPoolExecutor(10, 10, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>()));
+
+		// return new AsyncEventBus(Executors.newFixedThreadPool(10));
 
 		// BlockingQueue<Runnable> workQueue = new LinkedBlockingQueue<>(20);
 		// ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 20, 30,
 		// TimeUnit.SECONDS, workQueue);
 		// return new AsyncEventBus(executor);
-		
+
 		// return new EventBus();
 	}
 

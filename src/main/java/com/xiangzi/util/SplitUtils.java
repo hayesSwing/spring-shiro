@@ -58,8 +58,9 @@ public class SplitUtils {
 		}
 		int tLen = srcString.length();
 		int i, iMax;
-		if (tLen >= length)
+		if (tLen >= length) {
 			return srcString;
+		}
 		iMax = length - tLen;
 		StringBuffer sb = new StringBuffer();
 		for (i = 0; i < iMax; i++) {
@@ -83,8 +84,9 @@ public class SplitUtils {
 		}
 		int tLen = srcString.length();
 		int i, iMax;
-		if (tLen >= length)
+		if (tLen >= length) {
 			return srcString;
+		}
 		iMax = length - tLen;
 		StringBuffer sb = new StringBuffer();
 		sb.append(srcString);

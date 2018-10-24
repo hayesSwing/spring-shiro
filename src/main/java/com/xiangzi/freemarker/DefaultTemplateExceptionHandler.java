@@ -13,6 +13,7 @@ public class DefaultTemplateExceptionHandler implements TemplateExceptionHandler
 
 	private static final Logger logger = LoggerFactory.getLogger(DefaultTemplateExceptionHandler.class);
 
+	@Override
 	public void handleTemplateException(TemplateException te, Environment env, java.io.Writer out) throws TemplateException {
 		try {
 			logger.error("TemplateException:", te);

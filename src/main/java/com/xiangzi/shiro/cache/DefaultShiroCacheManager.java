@@ -66,6 +66,7 @@ public class DefaultShiroCacheManager implements CacheManager, Destroyable {
 		return cache;
 	}
 
+	@Override
 	public String toString() {
 		Collection<Cache> values = caches.values();
 		StringBuilder sb = new StringBuilder(getClass().getSimpleName()).append(" with ").append(caches.size()).append(" cache(s)): [");

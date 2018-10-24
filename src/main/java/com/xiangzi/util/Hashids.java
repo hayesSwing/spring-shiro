@@ -348,9 +348,10 @@ public class Hashids {
 	}
 
 	private static String consistentShuffle(String alphabet, String salt) {
-		if (salt.length() <= 0)
+		if (salt.length() <= 0) {
 			return alphabet;
-
+		}
+		
 		int asc_val, j;
 		char tmp;
 		for (int i = alphabet.length() - 1, v = 0, p = 0; i > 0; i--, v++) {
